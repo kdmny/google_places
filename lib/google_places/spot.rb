@@ -6,13 +6,15 @@ module GooglePlaces
       radius = options.delete(:radius) || 200
       sensor = options.delete(:sensor) || false
       types  = options.delete(:types)
+      name = options.delete(:name)
       location = Location.new(lat, lng)
-
+      
       options = {
         :location => location.format,
         :radius => radius,
         :sensor => sensor,
         :key => api_key,
+        :name => name
       }
 
       # Accept Types as a string or array
